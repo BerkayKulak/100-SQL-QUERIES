@@ -1,0 +1,14 @@
+-- Hangi þehirde ne kadar araç ilaný
+-- olduðu bilgisini þekildeki gibi 
+-- getiren sorguyu yazýnýz
+
+SELECT C.CITY,COUNT(O.ID) FROM WEBOFFERS O
+INNER JOIN USER_ U 
+ON U.ID = O.USERID
+INNER JOIN CITY C 
+ON C.ID=O.CITYID
+INNER JOIN TOWN T 
+ON T.ID = O.TOWNID
+INNER JOIN DISTRICT D ON D.ID=O.DISTRICTID
+GROUP BY C.CITY
+ORDER BY 2 DESC
